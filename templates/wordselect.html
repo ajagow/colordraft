@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container center">
+
+    <div class="row">
+        <div class="col-lg">
+            <h2>Step 1</h2>
+            <p>Think of a word and/or feeling you would you use to describe fog X FLO.
+            <br>
+                Got one?  Great.  Enter it below and hit the <strong>next</strong> button when you're ready.
+            </p>
+
+            <form action="/word" method="post">
+                <div class="form-group">
+                <input type="text" name="word" class="form-control" id="word" aria-describedby="wordInput" placeholder="Enter word">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+
+{% endblock %}

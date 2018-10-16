@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#    <h1>Hi, {{ user.username }}!</h1>#}
+{#    <button type="button" class="btn btn-primary">Primary</button>#}
+
+    <div id="fog" class="fill" style="display:none">
+        <p class="bg-white text-center">click to exit</p></div>
+
+    <div class="container center">
+<div class="container text-center" >
+        <h2>Step 4</h2>
+        <p> Remember this word from earlier? Yes? <strong>Great!</strong>
+            <br>
+            Click on the colors in the palette to change the color of your word!
+            <br>
+                Try to find the color that must closely matches that word.
+            <br> It's up to you decide which color best matches.
+            <br> When you're ready, click the <strong>next</strong> button.
+        </p>
+
+</div>
+
+
+    <div class="row border_black">
+
+
+
+
+{#            <img id="pls" src="{{ url_for('static', filename='images/pic2.jpg') }}" style="display: none;" alt="start"/>#}
+{#            <img id="pls" src="{{ filename }}" style="display: none;" alt="start"/>#}
+
+            <div class="col-lg text-center">
+                    <h1 id="wordSelector" class="special_word">{{ word }}</h1>
+
+            <button id="fogToggle" class="btn btn-outline-dark">Fog-ify</button>
+
+
+                <div class="row hex-container mt-5">
+                    {% for c in colors %}
+                        <div id={{ loop.index }}Box class="box" style="background-color: {{ c }};">
+                        <p>{{ c }}</p>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                 <button class="btn btn-primary mt-5" style="float:right" id="wordColorNext">Next</button>
+
+
+                </div>
+
+    </div>
+
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+
+{% endblock %}

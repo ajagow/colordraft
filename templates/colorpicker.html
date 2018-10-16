@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#    <h1>Hi, {{ user.username }}!</h1>#}
+{#    <button type="button" class="btn btn-primary">Primary</button>#}
+
+    <div class="container center">
+    <div class="container text-center">
+
+            <h2>Step 3</h2>
+            <p> Pick a color palette.
+            <br>
+               Play around. Pick based on colors that stood out to you while you were there.
+                <br>
+                Hit the <strong>next</strong> button when you're happy with your palette.
+            </p>
+
+    </div>
+
+    <div class="row">
+
+
+            <div class="col-lg">
+                <canvas id="panel" width="500" height="333"></canvas>
+            </div>
+
+{#            <img id="pls" src="{{ url_for('static', filename='images/pic2.jpg') }}" style="display: none;" alt="start"/>#}
+            <img id="pls" src="{{ filename }}" style="display: none;" alt="start"/>
+
+            <div class="col-lg">
+
+                 <div class="form-group">
+                    <label for="selectColor">Select Hex Position</label>
+                    <select id="selectColor" class="custom-select">
+                        <option value="1Box" selected>#1</option>
+                        <option value="2Box">#2</option>
+                        <option value="3Box">#3</option>
+                        <option value="4Box">#4</option>
+                        <option value="5Box">#5</option>
+                    </select>
+{#                    <button id="hexButton" type="button" class="btn btn-primary">Select</button>#}
+                  </div>
+
+                <div>Preview:</div>
+                <div id="preview"></div>
+                <div class="row hex-container mt-5">
+                    <div id="1Box" class="box" style="background-color: rgb(255, 255, 255);">
+                        <p>#ffffff</p>
+                    </div>
+                    <div id="2Box" class="box" style="background-color: rgb(255, 255, 255);">
+                         <p>#ffffff</p>
+                    </div>
+                    <div id="3Box" class="box" style="background-color: rgb(255, 255, 255);">
+                         <p>#ffffff</p>
+                    </div>
+                    <div id="4Box" class="box" style="background-color: rgb(255, 255, 255);">
+                         <p>#ffffff</p>
+                    </div>
+                    <div id="5Box" class="box" style="background-color: rgb(255, 255, 255);">
+                         <p>#ffffff</p>
+                    </div>
+
+
+                </div>
+
+                 <button id="submitBtn" class="btn btn-primary mt-5" style="float:right">Next</button>
+
+
+
+
+
+{#                <div class="input-group mb-3">#}
+{##}
+{##}
+{#                  <span class="input-group-text" id="basic-addon1">R</span>#}
+{##}
+{#                  <input id="rVal" type="text" class="form-control"  aria-label="idk" aria-describedby="basic-addon1">#}
+{##}
+{#                    <span class="input-group-text" id="basic-addon1">G</span>#}
+{##}
+{#                  <input id="gVal" type="text" class="form-control"  aria-label="idk" aria-describedby="basic-addon1">#}
+{##}
+{#                     <span class="input-group-text" id="basic-addon1">B</span>#}
+{##}
+{#                  <input id="bVal" type="text" class="form-control"  aria-label="idk" aria-describedby="basic-addon1">#}
+{#                   <span class="input-group-text" id="basic-addon1">Hex</span>#}
+{##}
+{#                  <input id="hexVal" type="text" class="form-control"  aria-label="idk" aria-describedby="basic-addon1">#}
+{##}
+{##}
+{#                </div>#}
+
+
+                </div>
+
+
+    </div>
+
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+
+{% endblock %}

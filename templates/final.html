@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container center">
+<div class="container text-center">
+     <h2>Finished</h2>
+        <p>Word: <strong>{{ word }}</strong>
+            <br>
+            Color: <strong>{{ color }}</strong>
+            <br>
+            Click <strong>See Gallery</strong> to see how other people responded to fog x FLO.
+
+        </p>
+
+</div>
+
+
+
+        <div class="photo_box border_black">
+            <img id="pls" src="{{ path}}" alt="start"/>
+            <p id="colorFinal">{{ word }}</p>
+
+         </div>
+
+     <a href="/list" class="btn btn-outline-primary">See Gallery</a>
+
+
+    </div>
+
+
+
+{% endblock %}

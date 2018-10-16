@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container center">
+
+    <div class="row">
+    <div class="col-lg">
+            <h2>Step 2</h2>
+        <p>Did you take any cool pics while at <strong>fog X FLO?</strong>
+            <br>
+                Yes? Awesome. Upload one!  If not, use one of ours!
+            </p>
+
+
+    <div class="container file_box">
+            <form method=post enctype="multipart/form-data">
+                <label>Please select a .jpg file only</label>
+
+        <div class="custom-file">
+            <input type=file name=file>
+
+            <span class="custom-file-control form-control-file"></span>
+
+         <input type=submit value=Upload class="btn btn-primary mt-3">
+
+        </div>
+
+    </form>
+
+    </div>
+
+    </br>
+
+     <p class="mt-lg-1 text-center">or use one of our images</p>
+
+
+
+    <div class="row border_black">
+
+
+
+          {% for image in images %}
+
+
+              <a class="lightbox" href=#{{ image }}>
+               <img src={{ url_for('static', filename='images/' + image) }}/>
+              <span class="text-center">{{ image }}</span>
+            </a>
+            <div class="lightbox-target" id={{ image }}>
+               <img src={{ url_for('static', filename='images/' + image) }}/>
+               <a class="lightbox-close" href="#"></a>
+            </div>
+
+
+        {% endfor %}
+
+
+        </div>
+        <p class="text-center">click to enlarge an image :)</p>
+
+    <div class="form-group">
+                    <label for="selectPhoto">Select image name from drop down then hit next</label>
+                    <select id="selectPhoto" class="custom-select">
+                                {% for image in images %}
+                        <option value={{ image }}>{{ image }}</option>
+                          {% endfor %}
+                    </select>
+{#                    <button id="hexButton" type="button" class="btn btn-primary">Select</button>#}
+
+        <button id="nextPhoto" class="btn btn-outline-primary">Next</button>
+
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+            </div>
+
+
+
+{% endblock %}
+
+
+
+{#{% extends "base.html" %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <div class="container center">#}
+{##}
+{#    <div class="row">#}
+{#    <div class="col-lg">#}
+{#            <h2>Step 2</h2>#}
+{#            <p>Think of a word and/or feeling you would you use to describe fog X FLO.#}
+{#            <br>#}
+{#                Got one?  Great.  Enter it below and hit the <strong>next</strong> button when you're ready.#}
+{#            </p>#}
+{##}
+{#    </div>#}
+{#        <form action="/wordPick" method="post">#}
+{#               <div class="custom-file">#}
+{#                  <input type="file" class="custom-file-input" id="customFile">#}
+{#                  <label class="custom-file-label" for="customFile">Choose file</label>#}
+{#                   <button type="submit" class="btn btn-primary">Submit</button>#}
+{#                </div>#}
+{#        </form>#}
+{##}
+{#    <form method=post enctype="multipart/form-data">#}
+{#           <div class="custom-file">#}
+{#                  <input type="file" name="file" class="custom-file-input">#}
+{#                  <label class="custom-file-label" for="customFile">Choose file</label>#}
+{#                   <input type="submit" class="btn btn-primary" value=Upload>Submit</input>#}
+{#                </div>#}
+{#        <div class="custom-file">#}
+{#            <input type=file name=file>#}
+{##}
+{#            <span class="custom-file-control form-control-file"></span>#}
+{##}
+{#         <input type=submit value=Upload class="btn btn-primary mt-3">#}
+{##}
+{#        </div>#}
+{##}
+{#    </form>#}
+{##}
+{#                <p>or use one of our images</p>#}
+{##}
+{#        {% for image in images %}#}
+{#            <section class="col-md-4 col-sm-6" style="background-color: green;">#}
+{#              <a href="{{ url_for('static', filename='images/' + image) }}">{{ image }}</a>#}
+{#            </section>#}
+{#        {% endfor %}#}
+{##}
+{#    </div>#}
+{##}
+{##}
+{#            </div>#}
+{#            <div style="clear:both;"></div>#}
+{#        </div>#}
+{##}
+{##}
+{#{% endblock %}#}
